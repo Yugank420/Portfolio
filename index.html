@@ -1,24 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yugank Kumar | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:#0f1115;
+  color:#eaeaea;
+}
+
+header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+header h1{
+  font-size:34px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+header p{
+  color:#999;
+  margin-bottom:20px;
+}
+
+header .header-desc{
+  max-width:700px;
+  margin:15px auto;
+  font-size:14px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+section{
+  padding:20px 40px;
+}
+
+section h2{
+  color:#4da3ff;
+  margin-bottom:20px;
+  font-size:24px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background:#171a21;
+  border-radius:16px;
+  border:1px solid #222;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  overflow:hidden;
+  max-height:300px;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card.expanded{
+  max-height:600px;
+  border-color:#4da3ff;
+  transform:scale(1.02);
+}
+
+.img{
+  height:140px;
+  overflow:hidden;
+  background:#1f2a38;
+}
+
+.img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.card:hover .img img{
+  transform:scale(1.1);
+}
+
+.content{
+  padding:15px;
+}
+
+.tag{
+  font-size:11px;
+  background:#1f2a38;
+  color:#4da3ff;
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+.title{
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+}
+
+.card-desc{
+  font-size:13px;
+  color:#bbb;
+  margin:10px 0;
+}
+
+.extra{
+  font-size:12px;
+  margin-top:10px;
+  color:#ddd;
+  opacity:0;
+  transform:translateY(-10px);
+  transition:0.3s;
+  line-height:1.4;
+}
+
+.card.expanded .extra{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.btn{
+  margin-top:10px;
+  font-size:12px;
+  color:#4da3ff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  section{
+    padding:20px 15px;
+  }
+  
+  header h1{
+    font-size:24px;
+  }
+  
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header{
+    padding:30px 15px;
+  }
+  
+  header h1{
+    font-size:20px;
+    letter-spacing:1px;
+  }
+  
+  section h2{
+    font-size:18px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>My Portfolio</h1>
 
-    <h2>Anno Terzo</h2>
-    <h3>MontaSmonta</h3>
-    <img src="montasmonta.JPG" alt="MontaSmonta activity">
-    <p>Tag: Formazione</p>
-    <p>Attività di montaggio e smontaggio.</p>
+<header>
+<h1>YUGANK KUMAR</h1>
+<p>ITIS Bus Pascal - Reggio Emilia</p>
 
-    <h2>Other Activities</h2>
-    <img src="PCTO.jpg" alt="PCTO image">
-    <img src="sicur.webp" alt="Sicur image">
-    <img src="Confindustria.png" alt="Confindustria image">
-    <img src="cna.png" alt="CNA image">
-    <img src="polar.jpg" alt="Polar image">
+<div class="header-desc">
+Studente di Informatica. Pratico baseball e sono interessato allo sviluppo software e alle tecnologie digitali.  
+Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
+</div>
+</header>
+
+<section>
+<h2>Anno Terzo</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Introduzione+PCTO" alt="Introduzione PCTO"></div>
+  <div class="content">
+    <div class="tag">Formazione</div>
+    <div class="title">Introduzione PCTO</div>
+    <div class="card-desc">Percorso scuola-lavoro.</div>
+    <div class="extra">Introduzione al PCTO e sviluppo delle competenze base.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Sicurezza+Lavoro" alt="Sicurezza lavoro"></div>
+  <div class="content">
+    <div class="tag">Normativa</div>
+    <div class="title">Sicurezza lavoro</div>
+    <div class="card-desc">Regole base di sicurezza.</div>
+    <div class="extra">Formazione sulle norme di sicurezza nei contesti scolastici e lavorativi.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Anno Quarto</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Confindustria" alt="Confindustria"></div>
+  <div class="content">
+    <div class="tag">Soft Skills</div>
+    <div class="title">Confindustria</div>
+    <div class="card-desc">Orientamento lavoro.</div>
+    <div class="extra">Incontro con aziende e mondo professionale.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=CNA+Tecnopolo" alt="CNA Tecnopolo"></div>
+  <div class="content">
+    <div class="tag">Business</div>
+    <div class="title">CNA Tecnopolo</div>
+    <div class="card-desc">Imprese locali.</div>
+    <div class="extra">Studio delle realtà produttive del territorio.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Polarity" alt="Polarity"></div>
+  <div class="content">
+    <div class="tag">IT</div>
+    <div class="title">Polarity</div>
+    <div class="card-desc">Settore informatico.</div>
+    <div class="extra">Incontro con professionisti del settore IT.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Anno Quinto</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Progetti+Finali" alt="Progetti finali"></div>
+  <div class="content">
+    <div class="tag">In costruzione</div>
+    <div class="title">Progetti finali</div>
+    <div class="card-desc">Attività in aggiornamento.</div>
+    <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<script>
+function toggle(card){
+  card.classList.toggle("expanded");
+}
+</script>
+
 </body>
 </html>
