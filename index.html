@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Yugank Kumar | Portfolio</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f1115;
+  color:#eaeaea;
+}
+
+header{
+  text-align:center;
+  padding:40px 20px;
+}
+
+header h1{
+  font-size:34px;
+  letter-spacing:2px;
+}
+
+header p{
+  color:#999;
+}
+
+header .desc{
+  max-width:700px;
+  margin:15px auto;
+  font-size:14px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+section{
+  padding:20px 40px;
+}
+
+h2{
+  color:#4da3ff;
+  margin-bottom:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background:#171a21;
+  border-radius:16px;
+  padding:15px;
+  border:1px solid #222;
+  cursor:pointer;
+  transition:0.3s;
+  overflow:hidden;
+  max-height:260px;
+}
+
+.card.expanded{
+  max-height:500px;
+  border-color:#4da3ff;
+  transform:scale(1.02);
+}
+
+.img{
+  height:120px;
+  border-radius:12px;
+  background:#222;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  color:#777;
+  margin-bottom:10px;
+}
+
+.tag{
+  font-size:11px;
+  background:#1f2a38;
+  color:#4da3ff;
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+.title{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.desc{
+  font-size:13px;
+  color:#bbb;
+  margin:10px 0;
+}
+
+.extra{
+  font-size:12px;
+  margin-top:10px;
+  color:#ddd;
+  opacity:0;
+  transform:translateY(-10px);
+  transition:0.3s;
+}
+
+.card.expanded .extra{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.btn{
+  margin-top:10px;
+  font-size:12px;
+  color:#4da3ff;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>YUGANK KUMAR</h1>
+<p>ITIS Bus Pascal - Reggio Emilia</p>
+
+<div class="desc">
+Studente di Informatica. Pratico baseball e sono interessato allo sviluppo software e alle tecnologie digitali.  
+Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
+</div>
+</header>
+
+<section>
+<h2>Anno Terzo</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">PCTO</div>
+  <div class="tag">Formazione</div>
+  <div class="title">Introduzione PCTO</div>
+  <div class="desc">Percorso scuola-lavoro.</div>
+  <div class="extra">Introduzione al PCTO e sviluppo delle competenze base.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">SICUREZZA</div>
+  <div class="tag">Normativa</div>
+  <div class="title">Sicurezza lavoro</div>
+  <div class="desc">Regole base di sicurezza.</div>
+  <div class="extra">Formazione sulle norme di sicurezza nei contesti scolastici e lavorativi.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">BUSCONNECT</div>
+  <div class="tag">Digitale</div>
+  <div class="title">BusConnect</div>
+  <div class="desc">Strumenti digitali.</div>
+  <div class="extra">Uso di strumenti digitali per la collaborazione scolastica.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">HARDWARE</div>
+  <div class="tag">Tecnico</div>
+  <div class="title">Hardware PC</div>
+  <div class="desc">Assemblaggio computer.</div>
+  <div class="extra">Attività pratica di montaggio e analisi componenti PC.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Anno Quarto</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">CONF</div>
+  <div class="tag">Soft Skills</div>
+  <div class="title">Confindustria</div>
+  <div class="desc">Orientamento lavoro.</div>
+  <div class="extra">Incontro con aziende e mondo professionale.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">CNA</div>
+  <div class="tag">Business</div>
+  <div class="title">CNA Tecnopolo</div>
+  <div class="desc">Imprese locali.</div>
+  <div class="extra">Studio delle realtà produttive del territorio.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">POL</div>
+  <div class="tag">IT</div>
+  <div class="title">Polarity</div>
+  <div class="desc">Settore informatico.</div>
+  <div class="extra">Incontro con professionisti del settore IT.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Anno Quinto</h2>
+
+<div class="grid">
+
+<div class="card" onclick="toggle(this)">
+  <div class="img">SOON</div>
+  <div class="tag">In costruzione</div>
+  <div class="title">Progetti finali</div>
+  <div class="desc">Attività in aggiornamento.</div>
+  <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
+  <div class="btn">ESPLORA</div>
+</div>
+
+</div>
+</section>
+
+<script>
+function toggle(card){
+  card.classList.toggle("expanded");
+}
+</script>
+
+</body>
+</html>
