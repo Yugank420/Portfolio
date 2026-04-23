@@ -49,21 +49,45 @@ h2{
   gap:20px;
 }
 
+/* CARD BASE */
 .card{
   background:#171a21;
   border-radius:16px;
   padding:15px;
   border:1px solid #222;
   cursor:pointer;
-  transition:max-height 0.4s ease, transform 0.3s;
+  transition:0.3s;
   overflow:hidden;
-  max-height:300px;
+
+  display:grid;
+  grid-template-rows:auto auto auto auto auto;
+}
+
+.card:hover{
+  transform:scale(1.01);
+}
+
+/* ESPANSIONE */
+.card .extra{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:0.3s ease;
+  font-size:12px;
+  color:#ddd;
+}
+
+.card.expanded .extra{
+  max-height:500px;
+  opacity:1;
+  margin-top:10px;
 }
 
 .card.expanded{
-  max-height:500px;
+  border-color:#4da3ff;
 }
 
+/* ELEMENTI */
 .img{
   height:120px;
   border-radius:12px;
@@ -91,24 +115,10 @@ h2{
   font-weight:bold;
 }
 
-.card-desc{
+.desc{
   font-size:13px;
   color:#bbb;
   margin:10px 0;
-}
-
-.extra{
-  font-size:12px;
-  margin-top:10px;
-  color:#ddd;
-  opacity:0;
-  transform:translateY(-10px);
-  transition:0.3s;
-}
-
-.card.expanded .extra{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .btn{
@@ -126,7 +136,7 @@ h2{
 <h1>YUGANK KUMAR</h1>
 <p>ITIS Bus Pascal - Reggio Emilia</p>
 
-<div class="card-desc">
+<div class="desc">
 Studente di Informatica. Pratico baseball e sono interessato allo sviluppo software e alle tecnologie digitali.  
 Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 </div>
@@ -143,8 +153,8 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="title">Introduzione PCTO</div>
   <div class="desc">Percorso scuola-lavoro.</div>
   <div class="extra">
-    Il progetto UST: Introduzione al PCTO è un’iniziativa formativa promossa dagli Uffici Scolastici Territoriali con l’obiettivo di aiutare gli studenti a comprendere meglio i Percorsi per le Competenze Trasversali e per l’Orientamento (PCTO).
-    L’attività fornisce le conoscenze di base sui PCTO, approfondendo i diritti e i doveri degli studenti, le norme di sicurezza negli ambienti di lavoro e le principali competenze trasversali richieste nel mondo professionale.</div>
+    Il progetto UST introduce i PCTO, con focus su competenze trasversali, sicurezza e mondo del lavoro.
+  </div>
   <div class="btn">ESPLORA</div>
 </div>
 
@@ -154,8 +164,7 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="title">Sicurezza lavoro</div>
   <div class="desc">Regole base di sicurezza.</div>
   <div class="extra">
-    Durante l’incontro dedicato alla sicurezza sono stati ripresi i concetti fondamentali legati alla tutela nei luoghi di lavoro, con un richiamo alle esperienze formative già svolte.
-    È stato inoltre approfondito il ruolo di ciascuno nella creazione di un ambiente lavorativo sicuro, inclusivo ed efficiente, favorendo la collaborazione e il rispetto tra tutti i partecipanti.
+    Approfondimento sulla sicurezza nei luoghi di lavoro e sull’importanza della collaborazione.
   </div>
   <div class="btn">ESPLORA</div>
 </div>
@@ -166,9 +175,7 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="title">BusConnect</div>
   <div class="desc">Strumenti digitali.</div>
   <div class="extra">
-    Uso di strumenti digitali per la collaborazione scolastica.
-    Nel contesto del progetto, alcuni studenti delle scuole superiori con competenze in programmazione hanno svolto il ruolo di tutor, affiancando persone anziane nell’apprendimento e nell’utilizzo di apparecchi elettronici.
-    L’esperienza ha permesso ai tutor di applicare le proprie conoscenze tecniche e sviluppare competenze trasversali come comunicazione e organizzazione. Durante gli incontri, i partecipanti sono stati guidati passo dopo passo nell’uso di dispositivi e funzionalità di base, con un approccio semplice e graduale.
+    Supporto nell’uso di dispositivi elettronici per persone anziane, con spiegazioni graduali e pratiche.
   </div>
   <div class="btn">ESPLORA</div>
 </div>
@@ -178,7 +185,9 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="tag">Tecnico</div>
   <div class="title">Monta&Smonta</div>
   <div class="desc">Assemblaggio computer.</div>
-  <div class="extra">Attività pratica di montaggio e analisi componenti PC.</div>
+  <div class="extra">
+    Attività pratica di montaggio e analisi dei componenti di un PC.
+  </div>
   <div class="btn">ESPLORA</div>
 </div>
 
@@ -196,10 +205,7 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="title">Confindustria</div>
   <div class="desc">Orientamento lavoro.</div>
   <div class="extra">
-    Incontro con aziende e mondo professionale.
-    Un percorso formativo intensivo sull’orientamento professionale, dedicato alla costruzione di un’immagine personale efficace. 
-    Attraverso il confronto con professionisti del settore, ho acquisito competenze per la redazione di un curriculum e per una comunicazione chiara e professionale, 
-    oltre a una migliore comprensione delle esigenze del mercato del lavoro attuale.
+    Formazione su CV, comunicazione professionale e mercato del lavoro.
   </div>
   <div class="btn">ESPLORA</div>
 </div>
@@ -210,10 +216,7 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="title">CNA Tecnopolo</div>
   <div class="desc">Imprese locali.</div>
   <div class="extra">
-    Incontro con professionisti del settore IT.
-    Esperienza formativa svolta presso il Tecnopolo di Reggio Emilia, dedicata all’analisi del sistema aziendale. 
-    L’attività ha favorito una maggiore consapevolezza del contesto lavorativo, approfondendo il funzionamento delle imprese, 
-    i diritti e doveri dei lavoratori e le principali tipologie contrattuali, fornendo basi utili per un futuro inserimento nel mondo del lavoro.
+    Analisi del sistema aziendale e delle principali tipologie contrattuali.
   </div>
   <div class="btn">ESPLORA</div>
 </div>
@@ -222,12 +225,9 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="img">POL</div>
   <div class="tag">IT</div>
   <div class="title">Polarity</div>
-  <div class="desc">
-    Un’esperienza immersiva nella realtà della Polarity, azienda del settore IT, durante la quale sono stati illustrati i principali processi operativi e i servizi offerti.
-    L’attività ha evidenziato il legame tra teoria e pratica e ha permesso di approfondire i diversi ambiti dell’informatica, sottolineando l’importanza di integrare competenze tecniche e soft skill.
-  </div>
+  <div class="desc">Esperienza nel settore IT.</div>
   <div class="extra">
-    
+    Approfondimento su processi aziendali IT e collegamento tra teoria e pratica.
   </div>
   <div class="btn">ESPLORA</div>
 </div>
@@ -245,7 +245,9 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
   <div class="tag">In costruzione</div>
   <div class="title">Progetti finali</div>
   <div class="desc">Attività in aggiornamento.</div>
-  <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
+  <div class="extra">
+    Le attività del quinto anno saranno aggiunte in seguito.
+  </div>
   <div class="btn">ESPLORA</div>
 </div>
 
