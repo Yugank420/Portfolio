@@ -2,11 +2,17 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yugank Kumar | Portfolio</title>
 
 <style>
-body{
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family: Arial, sans-serif;
   background:#0f1115;
   color:#eaeaea;
@@ -20,13 +26,15 @@ header{
 header h1{
   font-size:34px;
   letter-spacing:2px;
+  margin-bottom:10px;
 }
 
 header p{
   color:#999;
+  margin-bottom:20px;
 }
 
-header .desc{
+header .header-desc{
   max-width:700px;
   margin:15px auto;
   font-size:14px;
@@ -38,9 +46,10 @@ section{
   padding:20px 40px;
 }
 
-h2{
+section h2{
   color:#4da3ff;
   margin-bottom:20px;
+  font-size:24px;
 }
 
 .grid{
@@ -54,9 +63,9 @@ h2{
   border-radius:16px;
   border:1px solid #222;
   cursor:pointer;
-  transition:0.3s;
+  transition:all 0.3s ease;
   overflow:hidden;
-  max-height:260px;
+  max-height:300px;
 }
 
 .card:hover{
@@ -65,7 +74,7 @@ h2{
 }
 
 .card.expanded{
-  max-height:520px;
+  max-height:600px;
   border-color:#4da3ff;
   transform:scale(1.02);
 }
@@ -73,6 +82,7 @@ h2{
 .img{
   height:140px;
   overflow:hidden;
+  background:#1f2a38;
 }
 
 .img img{
@@ -103,9 +113,10 @@ h2{
 .title{
   font-size:16px;
   font-weight:bold;
+  color:#fff;
 }
 
-.desc{
+.card-desc{
   font-size:13px;
   color:#bbb;
   margin:10px 0;
@@ -118,6 +129,7 @@ h2{
   opacity:0;
   transform:translateY(-10px);
   transition:0.3s;
+  line-height:1.4;
 }
 
 .card.expanded .extra{
@@ -130,6 +142,37 @@ h2{
   font-size:12px;
   color:#4da3ff;
   font-weight:bold;
+  cursor:pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  section{
+    padding:20px 15px;
+  }
+  
+  header h1{
+    font-size:24px;
+  }
+  
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header{
+    padding:30px 15px;
+  }
+  
+  header h1{
+    font-size:20px;
+    letter-spacing:1px;
+  }
+  
+  section h2{
+    font-size:18px;
+  }
 }
 </style>
 </head>
@@ -140,7 +183,7 @@ h2{
 <h1>YUGANK KUMAR</h1>
 <p>ITIS Bus Pascal - Reggio Emilia</p>
 
-<div class="desc">
+<div class="header-desc">
 Studente di Informatica. Pratico baseball e sono interessato allo sviluppo software e alle tecnologie digitali.  
 Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 </div>
@@ -152,22 +195,22 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="PCTO.jpg"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Introduzione+PCTO" alt="Introduzione PCTO"></div>
   <div class="content">
     <div class="tag">Formazione</div>
     <div class="title">Introduzione PCTO</div>
-    <div class="desc">Percorso scuola-lavoro.</div>
+    <div class="card-desc">Percorso scuola-lavoro.</div>
     <div class="extra">Introduzione al PCTO e sviluppo delle competenze base.</div>
     <div class="btn">ESPLORA</div>
   </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="sicur.webp"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Sicurezza+Lavoro" alt="Sicurezza lavoro"></div>
   <div class="content">
     <div class="tag">Normativa</div>
     <div class="title">Sicurezza lavoro</div>
-    <div class="desc">Regole base di sicurezza.</div>
+    <div class="card-desc">Regole base di sicurezza.</div>
     <div class="extra">Formazione sulle norme di sicurezza nei contesti scolastici e lavorativi.</div>
     <div class="btn">ESPLORA</div>
   </div>
@@ -182,33 +225,33 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="Confindustria.png"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Confindustria" alt="Confindustria"></div>
   <div class="content">
     <div class="tag">Soft Skills</div>
     <div class="title">Confindustria</div>
-    <div class="desc">Orientamento lavoro.</div>
+    <div class="card-desc">Orientamento lavoro.</div>
     <div class="extra">Incontro con aziende e mondo professionale.</div>
     <div class="btn">ESPLORA</div>
   </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="cna.png"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=CNA+Tecnopolo" alt="CNA Tecnopolo"></div>
   <div class="content">
     <div class="tag">Business</div>
     <div class="title">CNA Tecnopolo</div>
-    <div class="desc">Imprese locali.</div>
+    <div class="card-desc">Imprese locali.</div>
     <div class="extra">Studio delle realtà produttive del territorio.</div>
     <div class="btn">ESPLORA</div>
   </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="polar.jpg"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Polarity" alt="Polarity"></div>
   <div class="content">
     <div class="tag">IT</div>
     <div class="title">Polarity</div>
-    <div class="desc">Settore informatico.</div>
+    <div class="card-desc">Settore informatico.</div>
     <div class="extra">Incontro con professionisti del settore IT.</div>
     <div class="btn">ESPLORA</div>
   </div>
@@ -223,11 +266,11 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img"><img src="cha.png"></div>
+  <div class="img"><img src="https://via.placeholder.com/260x140?text=Progetti+Finali" alt="Progetti finali"></div>
   <div class="content">
     <div class="tag">In costruzione</div>
     <div class="title">Progetti finali</div>
-    <div class="desc">Attività in aggiornamento.</div>
+    <div class="card-desc">Attività in aggiornamento.</div>
     <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
     <div class="btn">ESPLORA</div>
   </div>
