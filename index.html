@@ -52,7 +52,6 @@ h2{
 .card{
   background:#171a21;
   border-radius:16px;
-  padding:15px;
   border:1px solid #222;
   cursor:pointer;
   transition:0.3s;
@@ -60,22 +59,35 @@ h2{
   max-height:260px;
 }
 
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
 .card.expanded{
-  max-height:500px;
+  max-height:520px;
   border-color:#4da3ff;
   transform:scale(1.02);
 }
 
 .img{
-  height:120px;
-  border-radius:12px;
-  background:#222;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  color:#777;
-  margin-bottom:10px;
+  height:140px;
+  overflow:hidden;
+}
+
+.img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+.card:hover .img img{
+  transform:scale(1.1);
+}
+
+.content{
+  padding:15px;
 }
 
 .tag{
@@ -140,39 +152,25 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">PCTO</div>
-  <div class="tag">Formazione</div>
-  <div class="title">Introduzione PCTO</div>
-  <div class="desc">Percorso scuola-lavoro.</div>
-  <div class="extra">Introduzione al PCTO e sviluppo delle competenze base.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="PCTO.jpg"></div>
+  <div class="content">
+    <div class="tag">Formazione</div>
+    <div class="title">Introduzione PCTO</div>
+    <div class="desc">Percorso scuola-lavoro.</div>
+    <div class="extra">Introduzione al PCTO e sviluppo delle competenze base.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">SICUREZZA</div>
-  <div class="tag">Normativa</div>
-  <div class="title">Sicurezza lavoro</div>
-  <div class="desc">Regole base di sicurezza.</div>
-  <div class="extra">Formazione sulle norme di sicurezza nei contesti scolastici e lavorativi.</div>
-  <div class="btn">ESPLORA</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-  <div class="img">BUSCONNECT</div>
-  <div class="tag">Digitale</div>
-  <div class="title">BusConnect</div>
-  <div class="desc">Strumenti digitali.</div>
-  <div class="extra">Uso di strumenti digitali per la collaborazione scolastica.</div>
-  <div class="btn">ESPLORA</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-  <div class="img">HARDWARE</div>
-  <div class="tag">Tecnico</div>
-  <div class="title">Hardware PC</div>
-  <div class="desc">Assemblaggio computer.</div>
-  <div class="extra">Attività pratica di montaggio e analisi componenti PC.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="sicur.webp"></div>
+  <div class="content">
+    <div class="tag">Normativa</div>
+    <div class="title">Sicurezza lavoro</div>
+    <div class="desc">Regole base di sicurezza.</div>
+    <div class="extra">Formazione sulle norme di sicurezza nei contesti scolastici e lavorativi.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 </div>
@@ -184,30 +182,36 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">CONF</div>
-  <div class="tag">Soft Skills</div>
-  <div class="title">Confindustria</div>
-  <div class="desc">Orientamento lavoro.</div>
-  <div class="extra">Incontro con aziende e mondo professionale.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="Confindustria.png"></div>
+  <div class="content">
+    <div class="tag">Soft Skills</div>
+    <div class="title">Confindustria</div>
+    <div class="desc">Orientamento lavoro.</div>
+    <div class="extra">Incontro con aziende e mondo professionale.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">CNA</div>
-  <div class="tag">Business</div>
-  <div class="title">CNA Tecnopolo</div>
-  <div class="desc">Imprese locali.</div>
-  <div class="extra">Studio delle realtà produttive del territorio.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="cna.png"></div>
+  <div class="content">
+    <div class="tag">Business</div>
+    <div class="title">CNA Tecnopolo</div>
+    <div class="desc">Imprese locali.</div>
+    <div class="extra">Studio delle realtà produttive del territorio.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">POL</div>
-  <div class="tag">IT</div>
-  <div class="title">Polarity</div>
-  <div class="desc">Settore informatico.</div>
-  <div class="extra">Incontro con professionisti del settore IT.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="polar.jpg"></div>
+  <div class="content">
+    <div class="tag">IT</div>
+    <div class="title">Polarity</div>
+    <div class="desc">Settore informatico.</div>
+    <div class="extra">Incontro con professionisti del settore IT.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 </div>
@@ -219,12 +223,14 @@ Qui sono raccolte le attività PCTO svolte durante il percorso scolastico.
 <div class="grid">
 
 <div class="card" onclick="toggle(this)">
-  <div class="img">SOON</div>
-  <div class="tag">In costruzione</div>
-  <div class="title">Progetti finali</div>
-  <div class="desc">Attività in aggiornamento.</div>
-  <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
-  <div class="btn">ESPLORA</div>
+  <div class="img"><img src="cha.png"></div>
+  <div class="content">
+    <div class="tag">In costruzione</div>
+    <div class="title">Progetti finali</div>
+    <div class="desc">Attività in aggiornamento.</div>
+    <div class="extra">Le attività del quinto anno saranno aggiunte in seguito.</div>
+    <div class="btn">ESPLORA</div>
+  </div>
 </div>
 
 </div>
